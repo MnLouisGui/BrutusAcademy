@@ -1,2 +1,2 @@
 # BrutusAcademy
- Projeto Valter
+ Apenas uma atividade escolar, qualquer ajuda será bem vinda ☺
