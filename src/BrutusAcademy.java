@@ -111,6 +111,8 @@ public class BrutusAcademy {
                                 case 1:
                                     plano.updatePrice(); break;
                                 case 2:
+                                    System.out.println("========================================");
+                                    System.out.println("Digite a taxa personalizada");
                                     plano.updatePrice(ent.nextDouble()); break;
                                 case 3:
                                     break;

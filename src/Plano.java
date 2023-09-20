@@ -23,7 +23,6 @@ public class Plano {
     }
     public void registerPrice(Double p){
         this.price=p;
-        System.out.println("========================================");
     }
 
     
@@ -58,13 +57,17 @@ public class Plano {
     }
 
     public void viewdate(){
-        System.out.println("========================================");
-        System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.plan.name+"\nColaborador: "+this.colab.name +"\nContador: "+this.codigo);
-        System.out.println("========================================");
-        while(op==0){
-            System.out.println("1.Voltar");
-            op=ent.nextInt();
+        if(this.price!=null){
+            System.out.println("========================================");
+            System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.plan.name+"\nColaborador: "+this.colab.name +"\nContador: "+this.codigo);
+            System.out.println("========================================");
+            while(op==0){
+                System.out.println("1.Voltar");
+                op=ent.nextInt();
+            }
+            op=0;
+        }else{
+            System.out.println("Nenhum valor foi cadastrado cadastrado!!");
         }
-        op=0;
     }
 }
