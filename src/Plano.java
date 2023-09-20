@@ -67,7 +67,7 @@ public class Plano {
             }
             op=0;
         }else{
-            System.out.println("Nenhum valor foi cadastrado cadastrado!!");
+            System.out.println("Nenhum plano foi cadastrado cadastrado!!");
         }
     }
 }
