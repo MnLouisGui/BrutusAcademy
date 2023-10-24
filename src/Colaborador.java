@@ -1,10 +1,12 @@
 public class Colaborador {
-    static int contador;
-    int codigo;
-    Colaborador(){
-        contador++;
+    private String name;
+
+    public String getName(){
+        return this.name;
     }
 
-    String name;
+    public void setName(String name){
+        this.name=name;
+    }
 }
-
+//Copyright (c) 2023 Luis

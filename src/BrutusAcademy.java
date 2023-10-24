@@ -1,5 +1,7 @@
 import java.util.*;
 
+//Copyright (c) 2023 Luis
+
 public class BrutusAcademy {
     public BrutusAcademy(){
         
@@ -14,10 +16,10 @@ public class BrutusAcademy {
         Scanner ent=new Scanner(System.in);
 
         //Estaticos
-        aluno.name = "Lulu";
-        aluno1.name = "Jesus crist";
-        colab1.name = "Vava";
-        colab2.name = "Carlin";
+        aluno.setName("Marcos");
+        aluno1.setName("Jesus Crist");
+        colab1.setName("Valter");
+        colab2.setName("Carlos");
 
         plano.plan = aluno;
 
@@ -43,7 +45,7 @@ public class BrutusAcademy {
                             System.out.println("========================================");
                             System.out.println("Preço do Plano:"); plano.registerPrice(ent.nextDouble());
                             System.out.println("========================================");
-                            System.out.println("Qual aluno vai estar no plano?\n1."+aluno.name+"\n2."+aluno1.name);
+                            System.out.println("Qual aluno vai estar no plano?\n1."+aluno.getName()+"\n2."+aluno1.getName());
                             op=ent.nextInt();
                             //aluno
                             if (op==1){
@@ -55,7 +57,7 @@ public class BrutusAcademy {
                             }
                             //Colaborador
                             System.out.println("========================================"); 
-                            System.out.println("Qual colaborador vai estar no plano?\n1."+colab1.name+"\n2."+colab2.name);
+                            System.out.println("Qual colaborador vai estar no plano?\n1."+colab1.getName()+"\n2."+colab2.getName());
                             op=ent.nextInt();
                             //Colaborador
                             if (op==1){
@@ -77,7 +79,7 @@ public class BrutusAcademy {
                                     plano.updateName(ent.nextLine()); plano.updateName(ent.nextLine());
                                     break;
                                 case 2:
-                                    System.out.println("Qual aluno vai estar no plano?\n1. "+aluno.name+"\n2. "+aluno1.name);
+                                    System.out.println("Qual aluno vai estar no plano?\n1. "+aluno.getName()+"\n2. "+aluno1.getName());
                                     op=ent.nextInt();
                                     if (op==1){
                                         plano.plan=aluno;
@@ -88,7 +90,7 @@ public class BrutusAcademy {
                                     }
                                     break;
                                 case 3:
-                                    System.out.println("Qual treino vai estar no plano?\n1."+colab1.name+"\n2."+colab2.name);
+                                    System.out.println("Qual treino vai estar no plano?\n1."+colab1.getName()+"\n2."+colab2.getName());
                                     op=ent.nextInt();
                                     if (op==1){
                                         plano.colab = colab1;
@@ -127,6 +129,7 @@ public class BrutusAcademy {
                     }break;
 
                 case 2:
+                    System.out.print("Copyright (c) 2023 Luis");
                     While=false; break;
                 default: System.out.println("Opção inválida !!!");
             }

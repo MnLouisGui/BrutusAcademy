@@ -3,8 +3,8 @@ import java.util.*;
 public class Plano {
     Scanner ent=new Scanner(System.in);
     //Atributos gerais
-    String curse;
-    Double price;
+    private String curse;
+    private Double price;
     int op=0;
     static int contador;
     int codigo;
@@ -15,6 +15,15 @@ public class Plano {
     //Relacionamento
     Aluno plan;
     Colaborador colab;
+
+    //Get and Set
+    public String getCurse(){
+        return this.curse;
+    }
+
+    public void setName(String curse){
+        this.curse=curse;
+    }
 
     //Metodos
     public void registerName(String c){
@@ -59,7 +68,7 @@ public class Plano {
     public void viewdate(){
         if(this.price!=null){
             System.out.println("========================================");
-            System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.plan.name+"\nColaborador: "+this.colab.name +"\nContador: "+this.codigo);
+            System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.plan.getName()+"\nColaborador: "+this.colab.getName() +"\nContador: "+this.codigo);
             System.out.println("========================================");
             while(op==0){
                 System.out.println("1.Voltar");
@@ -71,3 +80,4 @@ public class Plano {
         }
     }
 }
+//Copyright (c) 2023 Luis
