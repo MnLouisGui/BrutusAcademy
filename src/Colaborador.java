@@ -1,6 +1,11 @@
 public class Colaborador {
     private String name;
 
+    //Construtor
+    Colaborador(){
+        
+    }
+
     public String getName(){
         return this.name;
     }

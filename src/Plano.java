@@ -8,6 +8,8 @@ public class Plano {
     int op=0;
     static int contador;
     int codigo;
+
+    //Construtor
     Plano(){
         contador++;
     }
@@ -23,6 +25,12 @@ public class Plano {
 
     public void setName(String curse){
         this.curse=curse;
+    }
+
+    //Herença
+    public Plano(String c, Double p){
+        this.curse=c;
+        this.price=p;
     }
 
     //Metodos

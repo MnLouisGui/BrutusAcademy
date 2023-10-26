@@ -1,6 +1,11 @@
 public class Aluno {
     private String name;
 
+    //Construtor
+    Aluno(){
+        
+    }
+
     public String getName(){
         return this.name;
     }

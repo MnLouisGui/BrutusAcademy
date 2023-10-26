@@ -7,6 +7,7 @@ public class BrutusAcademy {
         
     }
     public static void main(String[] args) throws Exception {
+        //Objetos
         Aluno aluno=new Aluno();
         Aluno aluno1=new Aluno();
         Colaborador colab1=new Colaborador();
@@ -21,8 +22,10 @@ public class BrutusAcademy {
         colab1.setName("Valter");
         colab2.setName("Carlos");
 
+        //Relacionamento
         plano.plan = aluno;
 
+        //Variaveis
         boolean While=true;
         int op;
 
@@ -38,8 +41,8 @@ public class BrutusAcademy {
                     System.out.println("## Menu - Plano ##\n1.Cadastro\n2.Alterar\n3.Alterar Valor\n4.Ver dados\n5.Sair");
                     op=ent.nextInt();
                     switch (op){
+                        //Cadastro
                         case 1:
-                            
                             System.out.println("========================================");
                             System.out.println("Nome do Plano:"); plano.registerName(ent.nextLine()); plano.registerName(ent.nextLine());
                             System.out.println("========================================");
@@ -67,8 +70,8 @@ public class BrutusAcademy {
                             }else{
                                 System.out.println("Opção inválida!!!");
                             }
-
                             break;
+                        //Alterar
                         case 2:
                             System.out.println("## Menu - Alterar ##\n1.Alterar Nome\n2.Alterar Aluno\n3.Alterar Colaborador\n4.Sair");
                             op=ent.nextInt();
@@ -105,6 +108,7 @@ public class BrutusAcademy {
                                 default:
                                     System.out.println("Opção inválida!!!");
                             }break;
+                        //Alt valor
                         case 3:
                             System.out.println("========================================");
                             System.out.println("## Menu - Atualizar preço ##\n1.Atualizar ( Taxa 10% )\n2.Atualizar ( Taxa personalizada )\n3.Sair");
@@ -120,6 +124,7 @@ public class BrutusAcademy {
                                     break;
                                 default: 
                             }break;
+                        //Ver dados
                         case 4:
                             plano.viewdate();
                             break;
@@ -127,12 +132,11 @@ public class BrutusAcademy {
                             break;
                         default: System.out.println("Opção inválida !!!"); 
                     }break;
-
                 case 2:
                     System.out.print("Copyright (c) 2023 Luis");
                     While=false; break;
                 default: System.out.println("Opção inválida !!!");
-            }
-        }//While True      
+            }//Switch planos
+        }//While    
     }//public static
 }//public class
