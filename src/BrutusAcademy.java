@@ -6,6 +6,7 @@ public class BrutusAcademy {
     public BrutusAcademy(){
         
     }
+
     public static void main(String[] args) throws Exception {
         //Objetos
         Aluno aluno=new Aluno();
@@ -14,7 +15,12 @@ public class BrutusAcademy {
         Colaborador colab2=new Colaborador();
         Plano.contador=0;
         Plano plano=new Plano();
+
+        //Leitor
         Scanner ent=new Scanner(System.in);
+
+        //objeto de Herança
+        P_individual ppi=new P_individual(null, null);
 
         //Estaticos
         aluno.setName("Marcos");
@@ -23,7 +29,7 @@ public class BrutusAcademy {
         colab2.setName("Carlos");
 
         //Relacionamento
-        plano.plan = aluno;
+        plano.pi = ppi;
 
         //Variaveis
         boolean While=true;
@@ -43,65 +49,90 @@ public class BrutusAcademy {
                     switch (op){
                         //Cadastro
                         case 1:
+                            Double price;
+                            String name;
+                            Aluno alunoT = null;
+                            Colaborador colabT = null;
                             System.out.println("========================================");
-                            System.out.println("Nome do Plano:"); plano.registerName(ent.nextLine()); plano.registerName(ent.nextLine());
+                            System.out.println("Nome do Plano:"); name=ent.nextLine(); name=ent.nextLine();
                             System.out.println("========================================");
-                            System.out.println("Preço do Plano:"); plano.registerPrice(ent.nextDouble());
+                            System.out.println("Preço do Plano:"); price=ent.nextDouble();
                             System.out.println("========================================");
                             System.out.println("Qual aluno vai estar no plano?\n1."+aluno.getName()+"\n2."+aluno1.getName());
                             op=ent.nextInt();
                             //aluno
-                            if (op==1){
-                                plano.plan=aluno;
-                            }else if(op==2){
-                                plano.plan=aluno1;
-                            }else{
-                                System.out.println("Opção inválida!!!");
+                            switch (op) {
+                                case 1:
+                                    alunoT = aluno;
+                                    break;
+                                case 2:
+                                    alunoT = aluno1;
+                                    break;
+                                default:
+                                    System.out.println("Opção inválida");
+                                    break;
                             }
                             //Colaborador
                             System.out.println("========================================"); 
                             System.out.println("Qual colaborador vai estar no plano?\n1."+colab1.getName()+"\n2."+colab2.getName());
                             op=ent.nextInt();
-                            //Colaborador
-                            if (op==1){
-                                plano.colab = colab1;
-                            }else if(op==2){
-                                plano.colab = colab2;
-                            }else{
-                                System.out.println("Opção inválida!!!");
+                            switch (op) {
+                                case 1:
+                                    colabT = colab1;
+                                    break;
+                                case 2:
+                                    colabT = colab2;
+                                    break;
+                                default:
+                                    System.out.println("Opção inválida");
+                                    break;
                             }
+                            plano.register(name, price, alunoT, colabT);
                             break;
                         //Alterar
                         case 2:
+                            String name2;
+                            Aluno alunoT2 = null;
+                            Colaborador colabT2 = null;
                             System.out.println("## Menu - Alterar ##\n1.Alterar Nome\n2.Alterar Aluno\n3.Alterar Colaborador\n4.Sair");
                             op=ent.nextInt();
                             switch(op){
                                 case 1:
                                     System.out.println("========================================");
-                                    System.out.println("Novo nome do plano:");
-                                    plano.updateName(ent.nextLine()); plano.updateName(ent.nextLine());
+                                    System.out.println("Novo nome do plano:"); name2 = ent.nextLine(); name2 = ent.nextLine();
+                                    plano.updateName(name2);
                                     break;
                                 case 2:
                                     System.out.println("Qual aluno vai estar no plano?\n1. "+aluno.getName()+"\n2. "+aluno1.getName());
                                     op=ent.nextInt();
-                                    if (op==1){
-                                        plano.plan=aluno;
-                                    }else if(op==2){
-                                        plano.plan=aluno1;
-                                    }else{
-                                        System.out.println("Opção inválida!!!");
+                                    switch (op) {
+                                        case 1:
+                                            alunoT2 = aluno;
+                                            break;
+                                        case 2:
+                                            alunoT2 = aluno1;
+                                            break;
+                                        default:
+                                            System.out.println("Opção inválida");
+                                            break;
                                     }
+                                    plano.updateAluno(alunoT2);
                                     break;
                                 case 3:
                                     System.out.println("Qual treino vai estar no plano?\n1."+colab1.getName()+"\n2."+colab2.getName());
                                     op=ent.nextInt();
-                                    if (op==1){
-                                        plano.colab = colab1;
-                                    }else if(op==2){
-                                        plano.colab = colab2;
-                                    }else{
-                                        System.out.println("Opção inválida!!!");
+                                    switch (op) {
+                                    case 1:
+                                        colabT2 = colab1;
+                                        break;
+                                    case 2:
+                                        colabT2 = colab2;
+                                        break;
+                                    default:
+                                        System.out.println("Opção inválida");
+                                        break;
                                     }
+                                    plano.updateColaborador(colabT2);
                                     break;
                                 case 4:
                                     break;
@@ -110,6 +141,7 @@ public class BrutusAcademy {
                             }break;
                         //Alt valor
                         case 3:
+                            Double taxaT;
                             System.out.println("========================================");
                             System.out.println("## Menu - Atualizar preço ##\n1.Atualizar ( Taxa 10% )\n2.Atualizar ( Taxa personalizada )\n3.Sair");
                             op=ent.nextInt();
@@ -119,7 +151,9 @@ public class BrutusAcademy {
                                 case 2:
                                     System.out.println("========================================");
                                     System.out.println("Digite a taxa personalizada");
-                                    plano.updatePrice(ent.nextDouble()); break;
+                                    taxaT=ent.nextDouble(); 
+                                    plano.updatePrice(taxaT);
+                                    break;
                                 case 3:
                                     break;
                                 default: 
@@ -134,7 +168,8 @@ public class BrutusAcademy {
                     }break;
                 case 2:
                     System.out.print("Copyright (c) 2023 Luis");
-                    While=false; break;
+                    While=false; 
+                    break;
                 default: System.out.println("Opção inválida !!!");
             }//Switch planos
         }//While    

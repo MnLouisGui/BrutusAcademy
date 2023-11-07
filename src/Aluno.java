@@ -1,9 +1,10 @@
 public class Aluno {
     private String name;
+    static int contador;
+    int codigo;
 
-    //Construtor
-    Aluno(){
-        
+    Aluno(){    
+        codigo++;   
     }
 
     public String getName(){

@@ -5,25 +5,24 @@ public class Plano {
     //Atributos gerais
     private String curse;
     private Double price;
-    int op=0;
+    int op;
+
     static int contador;
     int codigo;
-
-    //Construtor
     Plano(){
         contador++;
     }
 
-    //Relacionamento
-    Aluno plan;
-    Colaborador colab;
+    //At Relacionamento
+    private Aluno aluno;
+    private Colaborador colab;
+    P_individual pi;
 
     //Get and Set
     public String getCurse(){
         return this.curse;
     }
-
-    public void setName(String curse){
+    public void setCurse(String curse){
         this.curse=curse;
     }
 
@@ -33,13 +32,18 @@ public class Plano {
         this.price=p;
     }
 
-    //Metodos
-    public void registerName(String c){
-        this.curse=c;
-        this.codigo=contador;
+    //Metado infor
+    public void info(){
+
     }
-    public void registerPrice(Double p){
+
+    //Metodos
+    public void register(String c, Double p, Aluno a, Colaborador cl){
+        this.codigo=contador;
+        this.curse=c;
         this.price=p;
+        this.aluno=a;
+        this.colab=cl;
     }
 
     
@@ -47,10 +51,25 @@ public class Plano {
         if(this.curse!=null){
            this.curse=c; 
         }else if(this.curse==null){
-            System.out.println("Nenhum Plano cadastrado");
-            System.out.println("1.Voltar");           
+            System.out.println("Nenhum Plano cadastrado");        
         }
         System.out.println("========================================");
+    }
+
+    public void updateAluno(Aluno a){
+        if(this.curse!=null){
+            this.aluno=a;
+        }else if(this.curse==null){
+            System.out.println("Nenhum Plano cadastrado");          
+        }
+    }
+
+    public void updateColaborador(Colaborador c){
+        if(this.curse!=null){
+            this.colab=c;
+        }else if(this.curse==null){
+            System.out.println("Nenhum Plano cadastrado");          
+        }
     }
 
     public void updatePrice(){
@@ -76,7 +95,8 @@ public class Plano {
     public void viewdate(){
         if(this.price!=null){
             System.out.println("========================================");
-            System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.plan.getName()+"\nColaborador: "+this.colab.getName() +"\nContador: "+this.codigo);
+            System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.aluno.getName()+"\nColaborador: "+this.colab.getName() +"\nContador: "+this.codigo);
+            this.pi.info();
             System.out.println("========================================");
             while(op==0){
                 System.out.println("1.Voltar");

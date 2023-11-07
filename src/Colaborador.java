@@ -1,9 +1,10 @@
 public class Colaborador {
     private String name;
-
-    //Construtor
+    static int contador;
+    int codigo;
+    
     Colaborador(){
-        
+        contador++;
     }
 
     public String getName(){
