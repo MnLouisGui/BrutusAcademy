@@ -102,8 +102,7 @@ public class Plano {
         if(this.price!=null){
             System.out.println("========================================");
             System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.aluno.getName()+"\nColaborador: "+this.colab.getName() +"\nContador: "+this.codigo);
-            P_individual pp = (P_individual) this;
-            pp.info();
+            this.info();
             System.out.println("========================================");
             while(op==0){
                 System.out.println("1.Voltar");
