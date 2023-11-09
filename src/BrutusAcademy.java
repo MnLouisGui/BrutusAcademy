@@ -13,14 +13,13 @@ public class BrutusAcademy {
         Aluno aluno1=new Aluno();
         Colaborador colab1=new Colaborador();
         Colaborador colab2=new Colaborador();
-        Plano.contador=0;
-        Plano plano=new Plano();
+        Plano plano=new P_individual(null,null, 0);
 
         //Leitor
         Scanner ent=new Scanner(System.in);
 
         //objeto de Herança
-        P_individual ppi=new P_individual(null, null);
+        
 
         //Estaticos
         aluno.setName("Marcos");
@@ -29,7 +28,7 @@ public class BrutusAcademy {
         colab2.setName("Carlos");
 
         //Relacionamento
-        plano.pi = ppi;
+        
 
         //Variaveis
         boolean While=true;

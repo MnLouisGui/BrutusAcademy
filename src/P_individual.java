@@ -1,8 +1,9 @@
 public class P_individual extends Plano{
-    public P_individual(String c, Double p){
-        super(c, p);
+    P_individual(String c, Double p, int cont){
+        super(c, p, cont);
     }
     
+    @Override
     public void info(){
         System.out.println("Tipo: Plano individual");
     }

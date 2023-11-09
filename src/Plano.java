@@ -16,7 +16,6 @@ public class Plano {
     //At Relacionamento
     private Aluno aluno;
     private Colaborador colab;
-    P_individual pi;
 
     //Get and Set
     public String getCurse(){
@@ -26,20 +25,27 @@ public class Plano {
         this.curse=curse;
     }
 
+    public Double getPrice(){
+        return this.price;
+    }
+    public void setPrice(Double price){
+        this.price=price;
+    }
+
     //Herença
-    public Plano(String c, Double p){
+    public Plano(String c, Double p, int cont){
         this.curse=c;
         this.price=p;
+        this.codigo=cont+1;
     }
 
     //Metado infor
     public void info(){
-
+        System.out.println("Tipo: Plano");
     }
 
     //Metodos
     public void register(String c, Double p, Aluno a, Colaborador cl){
-        this.codigo=contador;
         this.curse=c;
         this.price=p;
         this.aluno=a;
@@ -96,7 +102,8 @@ public class Plano {
         if(this.price!=null){
             System.out.println("========================================");
             System.out.println("##DADOS##\nPlano: "+this.curse+"\nValor: "+this.price+"\nAluno no Plano: "+this.aluno.getName()+"\nColaborador: "+this.colab.getName() +"\nContador: "+this.codigo);
-            this.pi.info();
+            P_individual pp = (P_individual) this;
+            pp.info();
             System.out.println("========================================");
             while(op==0){
                 System.out.println("1.Voltar");
