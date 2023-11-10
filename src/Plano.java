@@ -41,7 +41,7 @@ public class Plano {
 
     //Metado infor
     public void info(){
-        System.out.println("Tipo: Plano");
+
     }
 
     //Metodos

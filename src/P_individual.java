@@ -3,7 +3,6 @@ public class P_individual extends Plano{
         super(c, p, cont);
     }
     
-    
     @Override public void info(){
         System.out.println("Tipo: Plano individual");
     }

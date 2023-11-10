@@ -3,7 +3,7 @@ public class P_grupo extends Plano{
         super(c, p, cont);
     }
 
-    public void info(){
+    @Override public void info(){
         System.out.println("Plano grupo");
     }
 }
